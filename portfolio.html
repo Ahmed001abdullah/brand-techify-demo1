@@ -1,122 +1,70 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Our creative portfolio showcasing branding and web design projects." />
-  <title>Brand Techify - Portfolio</title>
-  
-  <!-- FontAwesome CDN -->
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    integrity="sha512-p1CmF2G6fLK/5mFSuT3QDaG9WZ9r+hjJ9lpB6K6skRQWr9icSNXZUHgNfTdbX2NfvOipfM6n49hPQ6dJx4r6Yg=="
-    crossorigin="anonymous"
-    referrerpolicy="no-referrer"
-  />
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
-  <!-- CSS -->
-  <link rel="stylesheet" href="assets/css/style.css" />
-  <style>
-    .portfolio-grid {
-      max-width: 1000px;
-      margin: 3em auto;
-      display: grid;
-      grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
-      gap: 1.5rem;
-      padding: 0 1em;
-    }
-    .portfolio-item {
-      background: #1a1a1a;
-      border-radius: 10px;
-      overflow: hidden;
-      box-shadow: 0 4px 15px rgba(255,107,0,0.3);
-      transition: transform 0.3s ease;
-      cursor: pointer;
-    }
-    .portfolio-item:hover {
-      transform: scale(1.05);
-    }
-    .portfolio-item img {
-      width: 100%;
-      height: 180px;
-      object-fit: cover;
-      display: block;
-    }
-    .portfolio-item .desc {
-      padding: 1em;
-      color: #eee;
-      font-weight: 600;
-      text-align: center;
-      background: #121212;
-    }
-  </style>
-</head>
-<body>
-  <!-- Header -->
-  <header>
-    <nav class="navbar">
-      <a href="index.html" class="logo">Brand Techify</a>
-      <ul class="nav-links">
-        <li><a href="index.html" class="nav-item">Home</a></li>
-        <li><a href="pricing.html" class="nav-item">Pricing</a></li>
-        <li><a href="portfolio.html" class="nav-item active">Portfolio</a></li>
-        <li><a href="contact.html" class="nav-item">Contact</a></li>
-        <li><a href="blog.html" class="nav-item">Blog</a></li>
-      </ul>
-      <div class="menu-toggle" id="mobile-menu"><i class="fas fa-bars"></i></div>
-    </nav>
-  </header>
+<main>
+  <section class="portfolio-section">
+    <h2>Our Portfolio</h2>
 
-  <!-- Portfolio Hero -->
-  <section class="hero">
-    <div class="hero-text">
-      <h1>Our Creative Portfolio</h1>
-      <p>Discover our latest branding and web design projects.</p>
-      <a href="contact.html" class="btn btn-primary">Work With Us</a>
+    <div class="tabs">
+      <button class="tab-btn active" data-tab="websites">Websites</button>
+      <button class="tab-btn" data-tab="logos">Logos</button>
+      <button class="tab-btn" data-tab="apps">Apps</button>
     </div>
-    <div class="hero-image">
-      <img src="assets/images/portfolio-dummy.jpg" alt="Portfolio" />
+
+    <div class="tab-content active" id="websites">
+      <div class="portfolio-item">
+        <img src="images/site1-logo.png" alt="Site 1 Logo" class="portfolio-logo" />
+        <h3>Site One</h3>
+        <p>Modern responsive website for client A.</p>
+        <a href="https://site1.example.com" target="_blank" class="portfolio-link">Visit Website</a>
+      </div>
+      <div class="portfolio-item">
+        <img src="images/site2-logo.png" alt="Site 2 Logo" class="portfolio-logo" />
+        <h3>Site Two</h3>
+        <p>E-commerce platform with integrated payment system.</p>
+        <a href="https://site2.example.com" target="_blank" class="portfolio-link">Visit Website</a>
+      </div>
+    </div>
+
+    <div class="tab-content" id="logos">
+      <div class="portfolio-item">
+        <img src="images/logo1.png" alt="Logo 1" class="portfolio-logo" />
+        <h3>Logo One</h3>
+        <p>Brand identity design for company B.</p>
+      </div>
+      <div class="portfolio-item">
+        <img src="images/logo2.png" alt="Logo 2" class="portfolio-logo" />
+        <h3>Logo Two</h3>
+        <p>Minimalist logo for startup C.</p>
+      </div>
+    </div>
+
+    <div class="tab-content" id="apps">
+      <div class="portfolio-item">
+        <img src="images/app1-icon.png" alt="App 1" class="portfolio-logo" />
+        <h3>App One</h3>
+        <p>Mobile app for booking appointments.</p>
+      </div>
+      <div class="portfolio-item">
+        <img src="images/app2-icon.png" alt="App 2" class="portfolio-logo" />
+        <h3>App Two</h3>
+        <p>Fitness tracking mobile application.</p>
+      </div>
     </div>
   </section>
+</main>
 
-  <!-- Portfolio Grid -->
-  <section class="portfolio-grid">
-    <div class="portfolio-item">
-      <img src="assets/images/portfolio1.jpg" alt="Project 1" />
-      <div class="desc">Brand Identity for Tech Startup</div>
-    </div>
-    <div class="portfolio-item">
-      <img src="assets/images/portfolio2.jpg" alt="Project 2" />
-      <div class="desc">E-commerce Website Design</div>
-    </div>
-    <div class="portfolio-item">
-      <img src="assets/images/portfolio3.jpg" alt="Project 3" />
-      <div class="desc">Marketing Campaign Graphics</div>
-    </div>
-    <div class="portfolio-item">
-      <img src="assets/images/portfolio4.jpg" alt="Project 4" />
-      <div class="desc">Logo Design for Restaurant</div>
-    </div>
-  </section>
+<script>
+  // Tab switching JS
+  const tabs = document.querySelectorAll('.tab-btn');
+  const contents = document.querySelectorAll('.tab-content');
 
-  <!-- Footer -->
-  <footer>
-    <div class="footer-content">
-      <a href="index.html" class="footer-logo">Brand Techify</a>
-      <nav class="footer-nav">
-        <a href="index.html">Home</a> |
-        <a href="pricing.html">Pricing</a> |
-        <a href="portfolio.html">Portfolio</a> |
-        <a href="contact.html">Contact</a> |
-        <a href="blog.html">Blog</a>
-      </nav>
-    </div>
-    <p class="copyright">&copy; 2025 Brand Techify. All rights reserved.</p>
-  </footer>
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      // Remove active from all tabs & contents
+      tabs.forEach(t => t.classList.remove('active'));
+      contents.forEach(c => c.classList.remove('active'));
 
-  <!-- JS -->
-  <script src="assets/js/script.js"></script>
-</body>
-</html>
+      // Add active to clicked tab & related content
+      tab.classList.add('active');
+      document.getElementById(tab.dataset.tab).classList.add('active');
+    });
+  });
+</script>
