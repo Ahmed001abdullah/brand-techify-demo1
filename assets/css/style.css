@@ -1,76 +1,171 @@
-<!-- assets/css/style.css -->
+/* Root colors for easy theme updates */
 :root {
-  --primary-color: #ff6b00; /* Vibrant Orange */
-  --secondary-color: #1a1a1a; /* Dark Background */
-  --text-color: #ffffff; /* White Text */
+  --primary-color: #ff6b00; /* Orange */
+  --secondary-color: #0f0f0f; /* Dark background */
+  --nav-bg: #1a1a1a;
+  --text-color: #fff;
+  --hover-shadow: rgba(255, 107, 0, 0.6);
+}
+
+/* Global reset & font */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
+  font-family: 'Inter', sans-serif;
   background-color: var(--secondary-color);
   color: var(--text-color);
-  font-family: 'Inter', sans-serif;
-  margin: 0;
-  padding: 0;
+  line-height: 1.6;
 }
 
+/* NAVBAR */
 nav {
-  background: #1a1a1a;
-  padding: 1em;
+  background-color: var(--nav-bg);
+  padding: 1rem 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-nav a {
-  color: #fff;
-  margin: 0 1em;
+
+nav .logo {
+  font-weight: 900;
+  font-size: 1.5rem;
+  color: var(--primary-color);
   text-decoration: none;
-}
-.hero {
-  text-align: center;
-  padding: 4em 2em;
-  background: linear-gradient(135deg, #1a1a1a, #121212);
-}
-.cta-btn {
-  background: #ff6b00;
-  padding: 1em 2em;
-  color: #fff;
-  border: none;
-  text-decoration: none;
-  border-radius: 5px;
-  font-weight: bold;
-}
-.features {
-  padding: 4em 2em;
-  background: #1c1c1c;
-  text-align: center;
-}
-.feature-boxes {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 2em;
-}
-.feature-box {
-  background: #2a2a2a;
-  padding: 2em;
-  border-radius: 10px;
-  width: 300px;
-  transition: transform 0.3s ease;
-}
-.feature-box:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 10px #ff6b00;
-}
-.feature-box img {
-  width: 100%;
-  height: auto;
-  border-radius: 10px;
+  letter-spacing: 2px;
 }
 
-/* Responsive */
-@media screen and (max-width: 768px) {
-  .feature-boxes {
-    flex-direction: column;
-    align-items: center;
+nav .nav-menu {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+nav .nav-menu li a {
+  display: block;
+  padding: 0.6rem 1.2rem;
+  background-color: #222;
+  color: var(--text-color);
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+nav .nav-menu li a:hover,
+nav .nav-menu li a:focus {
+  background-color: var(--primary-color);
+  box-shadow: 0 4px 10px var(--hover-shadow);
+  color: #fff;
+  outline: none;
+}
+
+/* FOOTER */
+footer {
+  background-color: var(--nav-bg);
+  color: var(--text-color);
+  padding: 2rem;
+  text-align: center;
+  margin-top: 3rem;
+  font-size: 0.9rem;
+}
+
+footer .footer-content {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+footer .footer-logo {
+  font-weight: 900;
+  font-size: 1.3rem;
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+footer .footer-nav a {
+  color: var(--text-color);
+  text-decoration: none;
+  margin: 0 0.8rem;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+footer .footer-nav a:hover {
+  color: var(--primary-color);
+}
+
+/* HERO / SAMPLE SECTION */
+.hero {
+  padding: 5rem 2rem;
+  text-align: center;
+  background: linear-gradient(135deg, #1a1a1a, #121212);
+  animation: fadeInUp 1s ease forwards;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: var(--primary-color);
+  text-shadow: 0 0 6px var(--primary-color);
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  color: #ddd;
+}
+
+.cta-btn {
+  display: inline-block;
+  background-color: var(--primary-color);
+  color: #fff;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 4px 10px var(--hover-shadow);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cta-btn:hover,
+.cta-btn:focus {
+  background-color: #e05a00;
+  box-shadow: 0 6px 14px #d25a00cc;
+  outline: none;
+}
+
+/* ANIMATION */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  nav .nav-menu {
+    gap: 0.5rem;
+  }
+  nav .nav-menu li a {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+  .hero h1 {
+    font-size: 2rem;
+  }
+  .hero p {
+    font-size: 1rem;
   }
 }
