@@ -3,81 +3,55 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Pricing - Brandix Solutions</title>
+  <title>Pricing - Brand Techify</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <nav> ...same nav as homepage... </nav>
 
-  <section class="pricing-section" id="logo-design">
-    <h2>Logo Design Plans</h2>
-    <div class="pricing-wrapper">
+<div id="header"></div>
+
+<main class="container">
+  <section>
+    <h1 style="text-align:center; margin-bottom: 40px;">Pricing Plans</h1>
+
+    <div class="pricing-container">
       <div class="pricing-box">
-        <h3>Basic Logo</h3>
-        <p>Simple logos, 2 concepts, 1 revision</p>
-        <p><strong>Price:</strong> $100</p>
+        <h3>Basic Logo Design</h3>
+        <ul>
+          <li>3 Logo Concepts</li>
+          <li>Unlimited Revisions</li>
+          <li>Source Files Included</li>
+        </ul>
+        <p><strong>Price:</strong> $150</p>
+        <a href="contact.html" class="btn">Get Started</a>
       </div>
+
       <div class="pricing-box">
-        <h3>Standard Logo</h3>
-        <p>3 concepts, 3 revisions, source files</p>
-        <p><strong>Price:</strong> $200</p>
+        <h3>Website Design</h3>
+        <ul>
+          <li>Custom Responsive Design</li>
+          <li>SEO Friendly</li>
+          <li>CMS Integration</li>
+          <li>5 Pages Included</li>
+        </ul>
+        <p><strong>Price:</strong> $800</p>
+        <a href="contact.html" class="btn">Get Started</a>
       </div>
+
       <div class="pricing-box">
-        <h3>Premium Logo</h3>
-        <p>5 concepts, unlimited revisions, branding guide</p>
-        <p><strong>Price:</strong> $350</p>
+        <h3>Marketing Package</h3>
+        <ul>
+          <li>Social Media Strategy</li>
+          <li>Paid Ad Setup</li>
+          <li>Monthly Reporting</li>
+        </ul>
+        <p><strong>Price:</strong> $500/month</p>
+        <a href="contact.html" class="btn">Get Started</a>
       </div>
     </div>
   </section>
+</main>
 
-  <section class="pricing-section" id="website-design">
-    <h2>Website Design Plans</h2>
-    <div class="pricing-wrapper">
-      <div class="pricing-box">
-        <h3>Basic Website</h3>
-        <p>Up to 5 pages, responsive design</p>
-        <p><strong>Price:</strong> $500</p>
-      </div>
-      <div class="pricing-box">
-        <h3>Standard Website</h3>
-        <p>Up to 10 pages, SEO optimized</p>
-        <p><strong>Price:</strong> $900</p>
-      </div>
-      <div class="pricing-box">
-        <h3>Premium Website</h3>
-        <p>Custom features, e-commerce support</p>
-        <p><strong>Price:</strong> $1500</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="pricing-section" id="marketing-plan">
-    <h2>Marketing Plans</h2>
-    <div class="pricing-wrapper">
-      <div class="pricing-box">
-        <h3>Basic Marketing</h3>
-        <p>Social media setup and basic content</p>
-        <p><strong>Price:</strong> $300/month</p>
-      </div>
-      <div class="pricing-box">
-        <h3>Standard Marketing</h3>
-        <p>Content creation and paid ads</p>
-        <p><strong>Price:</strong> $600/month</p>
-      </div>
-      <div class="pricing-box">
-        <h3>Premium Marketing</h3>
-        <p>Full campaign management and analytics</p>
-        <p><strong>Price:</strong> $1200/month</p>
-      </div>
-    </div>
-  </section>
-
-  <script>
-    const menuToggle = document.getElementById('menu-toggle');
-    const navLinks = document.getElementById('nav-links');
-    menuToggle.addEventListener('click', () => {
-      navLinks.classList.toggle('active');
-    });
-  </script>
+<script src="header-footer.js"></script>
 </body>
 </html>
