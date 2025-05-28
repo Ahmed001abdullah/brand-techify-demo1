@@ -1,11 +1,18 @@
 <!-- assets/css/style.css -->
+:root {
+  --primary-color: #ff6b00; /* Vibrant Orange */
+  --secondary-color: #1a1a1a; /* Dark Background */
+  --text-color: #ffffff; /* White Text */
+}
+
 body {
+  background-color: var(--secondary-color);
+  color: var(--text-color);
   font-family: 'Inter', sans-serif;
-  background: #0f0f0f;
-  color: #fff;
   margin: 0;
   padding: 0;
 }
+
 nav {
   background: #1a1a1a;
   padding: 1em;
