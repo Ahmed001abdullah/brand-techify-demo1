@@ -1,51 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Creative design agency specializing in logo design, websites, and marketing.">
-  <title>Brand Techify</title>
-  <link rel="stylesheet" href="assets/css/style.css">
-  <link rel="icon" href="assets/icons/favicon.ico">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Creative design agency specializing in logo design, websites, and marketing." />
+  <title>Brand Techify - Home</title>
+  
+  <!-- FontAwesome CDN for icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-p1CmF2G6fLK/5mFSuT3QDaG9WZ9r+hjJ9lpB6K6skRQWr9icSNXZUHgNfTdbX2NfvOipfM6n49hPQ6dJx4r6Yg=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
+  
+  <!-- Your CSS -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+  
+  <!-- Marketing scripts placeholder -->
+  <!--
+  Insert Google Analytics / Tag Manager scripts here
+  -->
 </head>
 <body>
-  <div id="header"></div>
+  <!-- Header -->
+  <header>
+    <nav class="navbar">
+      <a href="index.html" class="logo">Brand Techify</a>
+      <ul class="nav-links">
+        <li><a href="index.html" class="nav-item">Home</a></li>
+        <li><a href="pricing.html" class="nav-item">Pricing</a></li>
+        <li><a href="portfolio.html" class="nav-item">Portfolio</a></li>
+        <li><a href="contact.html" class="nav-item">Contact</a></li>
+        <li><a href="blog.html" class="nav-item">Blog</a></li>
+      </ul>
+      <div class="menu-toggle" id="mobile-menu"><i class="fas fa-bars"></i></div>
+    </nav>
+  </header>
 
+  <!-- Hero Section -->
   <section class="hero">
-    <h1>We Design Brands That Speak</h1>
-    <p>Creative logos, websites, videos & more.</p>
-    <a href="contact.html" class="cta-btn">Get Started</a>
-  </section>
-
-  <section class="features">
-    <h2>Our Services</h2>
-    <div class="feature-boxes">
-      <div class="feature-box">
-        <img src="assets/images/placeholder.jpg" alt="Placeholder">
-        <h3>Logo Design</h3>
-        <p>Standout logos crafted with precision and creativity.</p>
-      </div>
-      <div class="feature-box">
-        <img src="assets/images/placeholder.jpg" alt="Placeholder">
-        <h3>Web Design</h3>
-        <p>Modern, mobile-responsive websites tailored to your brand.</p>
-      </div>
-      <div class="feature-box">
-        <img src="assets/images/placeholder.jpg" alt="Placeholder">
-        <h3>Marketing</h3>
-        <p>Compelling strategies and visuals that drive engagement.</p>
-      </div>
+    <div class="hero-text">
+      <h1>We Design Brands That Speak</h1>
+      <p>Creative logos, websites, videos & more.</p>
+      <a href="contact.html" class="btn btn-primary">Get Started</a>
+    </div>
+    <div class="hero-image">
+      <img src="assets/images/dummy-image.jpg" alt="Creative Design" />
     </div>
   </section>
 
+  <!-- Marketing Links Placeholder -->
   <section class="marketing-links">
-    <!-- Marketing placeholders -->
+    <!-- Marketing links/buttons will be added here later -->
   </section>
 
-  <div id="footer"></div>
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <a href="index.html" class="footer-logo">Brand Techify</a>
+      <nav class="footer-nav">
+        <a href="index.html">Home</a> |
+        <a href="pricing.html">Pricing</a> |
+        <a href="portfolio.html">Portfolio</a> |
+        <a href="contact.html">Contact</a> |
+        <a href="blog.html">Blog</a>
+      </nav>
+    </div>
+    <p class="copyright">&copy; 2025 Brand Techify. All rights reserved.</p>
+  </footer>
+
+  <!-- Your JS -->
   <script src="assets/js/script.js"></script>
 </body>
 </html>
