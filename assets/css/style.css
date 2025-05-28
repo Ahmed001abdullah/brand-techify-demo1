@@ -18,15 +18,74 @@ body {
   padding: 20px;
 }
 
-/* Pricing box */
+/* Navigation */
+
+nav {
+  background: #0056b3;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  position: relative;
+}
+
+nav .logo {
+  font-weight: bold;
+  font-size: 22px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+nav ul li a:hover {
+  color: #ff6f61;
+}
+
+/* Hamburger */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 4px;
+}
+
+.menu-toggle div {
+  width: 25px;
+  height: 3px;
+  background: white;
+}
+
+/* Pricing Page */
+
+.pricing-wrapper {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 40px;
+  flex-wrap: wrap;
+}
+
 .pricing-box {
   background: #fff;
   border-radius: 8px;
   box-shadow: 0 0 12px rgba(0,0,0,0.1);
   padding: 30px;
   text-align: center;
-  transition: transform 0.3s ease;
+  flex: 1 1 280px; /* responsive */
+  max-width: 300px;
   cursor: pointer;
+  transition: transform 0.3s ease;
 }
 
 .pricing-box:hover {
@@ -52,7 +111,8 @@ body {
   margin-bottom: 20px;
 }
 
-/* Blogs grid */
+/* Blogs grid (for reference) */
+
 .blogs-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
@@ -60,31 +120,57 @@ body {
   margin: 40px 0;
 }
 
-.blog-card {
-  background: #fff;
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  padding: 20px;
+/* Portfolio tabs */
+
+.portfolio-tabs {
+  margin-top: 40px;
+}
+
+.tabs-nav {
+  display: flex;
+  gap: 20px;
   cursor: pointer;
-  transition: box-shadow 0.3s ease;
+  margin-bottom: 20px;
 }
 
-.blog-card:hover {
-  box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+.tabs-nav div {
+  padding: 10px 20px;
+  background: #eee;
+  border-radius: 5px;
+  font-weight: 600;
+  transition: background-color 0.3s;
 }
 
-.blog-title {
-  font-size: 20px;
+.tabs-nav div.active {
+  background: #0056b3;
+  color: white;
+}
+
+.tab-content {
+  background: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+}
+
+/* Portfolio item styling */
+.portfolio-item {
   margin-bottom: 10px;
-  color: #007bff;
 }
 
-.blog-excerpt {
-  font-size: 14px;
-  color: #666;
+.portfolio-item img {
+  width: 50px;
+  vertical-align: middle;
+  margin-right: 10px;
 }
 
-/* Contact page layout */
+.portfolio-item span {
+  font-weight: 600;
+  vertical-align: middle;
+}
+
+/* Contact section */
+
 .contact-wrapper {
   display: flex;
   gap: 40px;
@@ -128,6 +214,7 @@ body {
 }
 
 /* Footer */
+
 footer {
   background: #222;
   color: #eee;
@@ -146,7 +233,8 @@ footer .social-icons a:hover {
   color: #ff6f61;
 }
 
-/* Homepage sections */
+/* Homepage Sections */
+
 .section {
   background: #fff;
   border-radius: 10px;
@@ -161,8 +249,34 @@ footer .social-icons a:hover {
   font-weight: 600;
 }
 
-/* Responsive tweaks */
+/* Responsive */
+
 @media (max-width: 768px) {
+  .pricing-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav ul {
+    display: none;
+    flex-direction: column;
+    background: #0056b3;
+    position: absolute;
+    top: 50px;
+    right: 20px;
+    border-radius: 5px;
+    width: 150px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  }
+
+  nav ul.show {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
   .contact-wrapper {
     flex-direction: column;
   }
