@@ -1,3 +1,4 @@
+<!-- assets/css/style.css -->
 body {
   font-family: 'Inter', sans-serif;
   background: #0f0f0f;
@@ -30,4 +31,39 @@ nav a {
   text-decoration: none;
   border-radius: 5px;
   font-weight: bold;
+}
+.features {
+  padding: 4em 2em;
+  background: #1c1c1c;
+  text-align: center;
+}
+.feature-boxes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2em;
+}
+.feature-box {
+  background: #2a2a2a;
+  padding: 2em;
+  border-radius: 10px;
+  width: 300px;
+  transition: transform 0.3s ease;
+}
+.feature-box:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 10px #ff6b00;
+}
+.feature-box img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .feature-boxes {
+    flex-direction: column;
+    align-items: center;
+  }
 }
