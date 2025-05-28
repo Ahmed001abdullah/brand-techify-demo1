@@ -3,227 +3,122 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Brand Techify</title>
-  <link rel="stylesheet" href="styles.css" />
-  <script>
-    // Hamburger menu toggle
-    function toggleMenu() {
-      document.querySelector('nav ul').classList.toggle('show');
-    }
-
-    // Portfolio tabs
-    function openTab(evt, tabName) {
-      const tabContents = document.querySelectorAll('.tab-content');
-      tabContents.forEach(tc => (tc.style.display = 'none'));
-
-      const tabButtons = document.querySelectorAll('.tab-buttons button');
-      tabButtons.forEach(btn => btn.classList.remove('active'));
-
-      document.getElementById(tabName).style.display = 'block';
-      evt.currentTarget.classList.add('active');
-    }
-
-    // Contact form submission handler (Formspree)
-    function handleSubmit(event) {
-      event.preventDefault();
-      const form = event.target;
-      const formData = new FormData(form);
-
-      fetch(form.action, {
-        method: form.method,
-        body: formData,
-        headers: { Accept: 'application/json' }
-      })
-        .then(response => {
-          if (response.ok) {
-            form.style.display = 'none';
-            document.getElementById('thank-you-message').style.display = 'block';
-          } else {
-            alert('Oops! Something went wrong.');
-          }
-        })
-        .catch(() => alert('Oops! Something went wrong.'));
-    }
-
-    // Initialize default portfolio tab on page load
-    window.onload = () => {
-      document.querySelector('.tab-buttons button').click();
-    };
-  </script>
+  <title>Brand Techify - Home</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <!-- NAVIGATION -->
-  <nav>
-    <div class="logo">Brand Techify</div>
-    <ul>
-      <li><a href="#main">Home</a></li>
-      <li><a href="#pricing">Pricing</a></li>
-      <li><a href="#portfolio">Portfolio</a></li>
-      <li><a href="#reviews">Reviews</a></li>
-      <li><a href="#why-choose-us">Why Choose Us</a></li>
-      <li><a href="#blogs">Blogs</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-    <div class="hamburger" onclick="toggleMenu()">
-      <div></div>
-      <div></div>
-      <div></div>
-    </div>
-  </nav>
+<div id="header"></div>
 
-  <!-- MAIN SECTION -->
-  <section id="main" class="main-section container">
+<main class="container">
+
+  <!-- Main Hero Section -->
+  <section class="home-main">
     <h1>Welcome to Brand Techify</h1>
-    <p>Your one-stop shop for digital marketing, web design, and custom software development.</p>
-    <button class="btn-primary" onclick="location.href='#contact'">Get Started</button>
+    <p>Your one-stop solution for branding, marketing, and web design.</p>
+    <a href="pricing.html" class="btn">See Our Plans</a>
   </section>
 
-  <!-- PRICING SECTION -->
-  <section id="pricing" class="pricing-section container">
-    <h2>Our Pricing Plans</h2>
-    <div class="pricing-cards">
-      <div class="pricing-card">
-        <h3>Basic Plan</h3>
+  <!-- Pricing Section (summary) -->
+  <section>
+    <h2 style="text-align:center; margin-bottom:30px;">Our Pricing Plans</h2>
+    <div class="pricing-container">
+      <div class="pricing-box">
+        <h3>Logo Design</h3>
         <ul>
-          <li>Social Media Management</li>
-          <li>5 Posts per Week</li>
-          <li>Monthly Reporting</li>
+          <li>3 Unique Concepts</li>
+          <li>Unlimited Revisions</li>
+          <li>High Resolution Files</li>
         </ul>
-        <button class="btn-secondary">$300/month</button>
+        <a href="pricing.html" class="btn">See More</a>
       </div>
-      <div class="pricing-card">
-        <h3>Standard Plan</h3>
+      <div class="pricing-box">
+        <h3>Website Design</h3>
         <ul>
-          <li>Everything in Basic</li>
-          <li>Custom Website Maintenance</li>
-          <li>SEO Optimization</li>
+          <li>Responsive Layout</li>
+          <li>SEO Optimized</li>
+          <li>CMS Integration</li>
         </ul>
-        <button class="btn-secondary">$500/month</button>
+        <a href="pricing.html" class="btn">See More</a>
       </div>
-      <div class="pricing-card">
-        <h3>Premium Plan</h3>
+      <div class="pricing-box">
+        <h3>Marketing Plan</h3>
         <ul>
-          <li>Everything in Standard</li>
-          <li>Custom Software Development</li>
-          <li>Dedicated Support</li>
+          <li>Social Media Strategy</li>
+          <li>Paid Ads Setup</li>
+          <li>Monthly Reports</li>
         </ul>
-        <button class="btn-secondary">$1000/month</button>
+        <a href="pricing.html" class="btn">See More</a>
       </div>
     </div>
   </section>
 
-  <!-- PORTFOLIO SECTION -->
-  <section id="portfolio" class="portfolio-section container">
-    <h2>Our Portfolio</h2>
-
-    <div class="tabs">
+  <!-- Portfolio Section -->
+  <section>
+    <h2 style="text-align:center; margin-bottom:30px;">Portfolio</h2>
+    <div class="portfolio-tabs">
       <div class="tab-buttons">
-        <button onclick="openTab(event, 'web')">Web Design</button>
-        <button onclick="openTab(event, 'seo')">SEO Projects</button>
-        <button onclick="openTab(event, 'software')">Software</button>
+        <button class="active" onclick="openTab(event, 'logo')">Logo Design</button>
+        <button onclick="openTab(event, 'website')">Website Design</button>
+        <button onclick="openTab(event, 'marketing')">Marketing</button>
       </div>
 
-      <div id="web" class="tab-content" style="display:none;">
-        <img src="https://via.placeholder.com/120" alt="Web Project 1" />
-        <h3>Corporate Website</h3>
-        <p>Responsive website designed for a corporate client.</p>
+      <div id="logo" class="tab-content" style="display:block;">
+        <img src="assets/logo-sample.png" alt="Logo Design Sample" />
+        <p>Creative and professional logos tailored to your brand identity.</p>
       </div>
-
-      <div id="seo" class="tab-content" style="display:none;">
-        <img src="https://via.placeholder.com/120" alt="SEO Project" />
-        <h3>SEO Campaign</h3>
-        <p>Boosted organic traffic for a local business by 50% in 3 months.</p>
+      <div id="website" class="tab-content" style="display:none;">
+        <img src="assets/website-sample.png" alt="Website Design Sample" />
+        <p>Modern, responsive websites optimized for performance and SEO.</p>
       </div>
-
-      <div id="software" class="tab-content" style="display:none;">
-        <img src="https://via.placeholder.com/120" alt="Software Project" />
-        <h3>Inventory Management</h3>
-        <p>Custom inventory system tailored to client needs.</p>
+      <div id="marketing" class="tab-content" style="display:none;">
+        <img src="assets/marketing-sample.png" alt="Marketing Sample" />
+        <p>Effective marketing strategies to boost your online presence.</p>
       </div>
     </div>
   </section>
 
-  <!-- REVIEWS SECTION -->
-  <section id="reviews" class="reviews-section">
-    <h2>What Our Clients Say</h2>
-    <div class="review">
-      "Brand Techify transformed our online presence and doubled our sales within six months!" – Sarah K.
-    </div>
-    <div class="review">
-      "Professional, responsive, and results-driven. Highly recommended." – John D.
-    </div>
-  </section>
-
-  <!-- WHY CHOOSE US SECTION -->
-  <section id="why-choose-us" class="why-choose-section container">
-    <h2>Why Choose Us?</h2>
-    <ul>
-      <li>Experienced team with diverse expertise</li>
-      <li>Customer-first approach with transparent communication</li>
-      <li>Tailored solutions to fit your business goals</li>
-      <li>Affordable pricing with exceptional quality</li>
-      <li>24/7 Support and consultation</li>
-    </ul>
-  </section>
-
-  <!-- BLOGS SECTION -->
-  <section id="blogs" class="blogs-section container">
-    <h2>Latest Blogs</h2>
-    <div class="blog-cards">
-      <div class="blog-card">
-        <h3>Top 5 Digital Marketing Trends in 2025</h3>
-        <p>Stay ahead with the latest trends transforming the marketing landscape.</p>
-      </div>
-      <div class="blog-card">
-        <h3>How to Improve Website SEO Quickly</h3>
-        <p>Effective strategies for boosting your search engine rankings fast.</p>
-      </div>
-      <div class="blog-card">
-        <h3>Choosing the Right Software for Your Business</h3>
-        <p>Tips and tricks to select software that fits your unique needs.</p>
-      </div>
+  <!-- Reviews Section -->
+  <section>
+    <h2 style="text-align:center; margin-bottom:30px;">Reviews</h2>
+    <div class="reviews">
+      <div class="review-box">"Brand Techify transformed our online presence and sales increased 50%!" - Client A</div>
+      <div class="review-box">"Professional and quick delivery, highly recommend their services." - Client B</div>
+      <div class="review-box">"Excellent communication and creative ideas throughout the project." - Client C</div>
     </div>
   </section>
 
-  <!-- CONTACT SECTION -->
-  <section id="contact" class="contact-section">
-    <div class="contact-info">
-      <h3>Contact Us</h3>
-      <p>📍 123 Brand Techify, Karachi, Pakistan</p>
-      <p>📞 +92 300 1234567</p>
-      <p>✉️ info@Brand Techify.com</p>
-      <div class="social-icons">
-        <a href="#" aria-label="Facebook">🔵</a>
-        <a href="#" aria-label="Instagram">📸</a>
-        <a href="#" aria-label="LinkedIn">🔗</a>
-      </div>
-    </div>
-
-    <div class="contact-form-container">
-      <form
-        class="contact-form"
-        action="https://formspree.io/f/yourformid"
-        method="POST"
-        onsubmit="handleSubmit(event)"
-      >
-        <label for="name">Name:</label>
-        <input id="name" name="name" type="text" required />
-
-        <label for="email">Email:</label>
-        <input id="email" name="_replyto" type="email" required />
-
-        <label for="message">Message:</label>
-        <textarea id="message" name="message" rows="5" required></textarea>
-
-        <button type="submit">Send Message</button>
-      </form>
-
-      <div id="thank-you-message" class="thank-you-message">
-        Thanks for reaching out! We'll get back to you soon.
-      </div>
-    </div>
+  <!-- Why Choose Us -->
+  <section class="why-choose">
+    <h2>Why Choose Brand Techify?</h2>
+    <p>We offer personalized services with proven results. Your brand’s growth is our top priority.</p>
   </section>
 
-</body>
-</html>
+  <!-- Blogs Section -->
+  <section>
+    <h2 style="text-align:center; margin-bottom:30px;">Latest Blogs</h2>
+    <div class="blogs">
+      <div class="blog-box" onclick="location.href='blog-detail.html';" style="cursor:pointer;">
+        <h4>Understanding Branding Basics</h4>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+      </div>
+      <div class="blog-box" onclick="location.href='blog-detail.html';" style="cursor:pointer;">
+        <h4>Top Web Design Trends 2025</h4>
+        <p>Curabitur lobortis id lorem id bibendum...</p>
+      </div>
+      <div class="blog-box" onclick="location.href='blog-detail.html';" style="cursor:pointer;">
+        <h4>Effective Social Media Strategies</h4>
+        <p>Fusce euismod convallis velit, eu auctor lacus vehicula...</p>
+      </div>
+    </div>
+    <a href="blogs.html" class="btn read-more">Read More Blogs</a>
+  </section>
+
+  <!-- Contact Section (same as contact page) -->
+  <section>
+    <h2 style="text-align:center; margin-bottom:30px;">Contact Us</h2>
+    <div class="contact-container">
+      <div class="contact-left">
+        <h3>Contact Info</h3>
+        <p><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M22 16v2a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-2a10 10 0 1 1 20 0z"/></svg> Email: info@brandtechify.com</p>
+        <p><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24
